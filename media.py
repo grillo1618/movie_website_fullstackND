@@ -6,7 +6,7 @@
 import webbrowser
 
 
-class Video:
+class Video(object):
     """This class represents a video data structure."""
 
     def __init__(self, v_title, v_duration=0.0):
@@ -80,13 +80,13 @@ class Movie(Video):
     def __init__(self, title, duration, storyline, poster_image_url,
                  trailer_youtube_url, rating="NA"):
         """Initializes an instance of the class Movie."""
-        super().__init__(title, duration)
+        super(Movie, self).__init__(title, duration)
         self.storyline = storyline
         self.poster_image_url = poster_image_url
         self.trailer_youtube_url = trailer_youtube_url
 
         # Verifies rating validity and assigns if valid, if not, assign NA.
-        if(str(rating).upper() in Movie.VALID_RATINGS):
+        if str(rating).upper() in Movie.VALID_RATINGS:
             self.rating = rating
         else:
             self.rating = "NA"
@@ -115,7 +115,7 @@ class Movie(Video):
 
     def set_trailer_youtube_url(self, trailer_url=""):
         """Sets the movie's youtube movie trailer url."""
-        if(str(trailer_url) != ""):
+        if str(trailer_url) != "":
             self.trailer_youtube_url = trailer_url
         else:
             print("Argument Error: The url for the movie trailer is " +
@@ -123,7 +123,7 @@ class Movie(Video):
 
     def set_storyline(self, storyline=""):
         """Sets the movie's storyline text."""
-        if (str(storyline) != ""):
+        if str(storyline) != "":
             self.storyline = storyline
         else:
             print("Argument Error: The storyline for the movie's " +
@@ -132,7 +132,7 @@ class Movie(Video):
     def set_poster_img_url(self, poster_url=""):
         """Sets the movie poster's url."""
         # Could be awesome to have regex for this validation.
-        if (str(poster_url) != ""):
+        if str(poster_url) != "":
             self.poster_image_url = poster_url
         else:
             print("Argument Error: The storyline for the movie's " +
@@ -163,7 +163,7 @@ class Movie(Video):
         return class_info_data
 
 
-class MovieLibrary():
+class MovieLibrary(object):
     """This class represents a library of movies.
     SPECIAL NOTE: THIS CLASS WILL BE EXTENDED."""
 

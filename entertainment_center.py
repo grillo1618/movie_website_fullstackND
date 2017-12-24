@@ -1,3 +1,5 @@
+"""This file actually constructs the movie_trailer_site website."""
+
 from media import Movie, MovieLibrary
 import movie_trailer_site
 
@@ -54,7 +56,7 @@ star_wars_i = Movie("Star Wars: Episode I: The Phantom Menace",
 star_wars_ii = Movie("Star Wars: Episode II - Attack of The Clones",
                      144,
                      "Ten years after initially meeting, Anakin Skywalker " +
-                     "shares a forbidden romance with Padmé, while Obi-Wan " +
+                     "shares a forbidden romance with Padme, while Obi-Wan " +
                      "investigates an assassination attempt on the " +
                      "Senator and discovers a secret clone army " +
                      "crafted for the Jedi.",
